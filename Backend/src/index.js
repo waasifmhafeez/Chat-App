@@ -9,7 +9,6 @@ import { connectDB } from "./lib/db.js";
 
 import authRoute from "./routes/auth.route.js";
 import messageRoute from "./routes/message.route.js";
-const __dirname = path.resolve();
 
 dotenv.config();
 
@@ -25,14 +24,16 @@ app.use(express.json());
 app.use(cookieParser());
 
 const port = process.env.PORT;
+const __dirname = path.resolve();
 
 app.use("/api/auth", authRoute);
 app.use("/api/messages", messageRoute);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../Frontend/dist")));
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../Frontend", "dist", "index.html"));
+    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
   });
 }
 
