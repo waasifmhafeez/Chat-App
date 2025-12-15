@@ -1,23 +1,13 @@
 {
-  "name": "real-time-chat-app",
+  "name": "chat-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm install --include=dev --prefix Backend && npm install --include=dev --prefix Frontend && npm run build --prefix Frontend",
-    "start": "npm run start --prefix Backend"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/waasifmhafeez/Chat-App.git"
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm run start --prefix backend"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/waasifmhafeez/Chat-App/issues"
-  },
-  "homepage": "https://github.com/waasifmhafeez/Chat-App#readme"
+  "license": "ISC"
 }
